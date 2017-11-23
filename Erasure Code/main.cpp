@@ -5,11 +5,14 @@
 //  Created by Jerry Wang on 2017/11/21.
 //  Copyright © 2017年 Jerry Wang. All rights reserved.
 //
-
 #include <iostream>
+#include "functions.h"
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int main(){
+    dataInitial();
+    dataPartition();
+    dataDeploy();
+    testReadData();
+    
     return 0;
 }

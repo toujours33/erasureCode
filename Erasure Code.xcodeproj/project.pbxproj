@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86B273AC1FC664BF00E39B6B /* decoded.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 86B273AB1FC664BF00E39B6B /* decoded.cpp */; };
+		86B273AE1FC6696C00E39B6B /* simulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 86B273AD1FC6696C00E39B6B /* simulator.cpp */; };
 		86E817D91FC4177F00141998 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 86E817D81FC4177F00141998 /* main.cpp */; };
+		86FCD2AD1FC417E1001DEC76 /* prepare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 86FCD2AB1FC417E1001DEC76 /* prepare.cpp */; };
+		86FCD2B11FC45722001DEC76 /* ListOperation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 86FCD2B01FC45722001DEC76 /* ListOperation.cpp */; };
+		86FCD2B41FC5620C001DEC76 /* dataBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 86FCD2B21FC5620C001DEC76 /* dataBlock.cpp */; };
+		86FCD2B61FC571BA001DEC76 /* matrixOperation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 86FCD2B51FC571BA001DEC76 /* matrixOperation.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +29,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		86B273AB1FC664BF00E39B6B /* decoded.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = decoded.cpp; sourceTree = "<group>"; };
+		86B273AD1FC6696C00E39B6B /* simulator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = simulator.cpp; sourceTree = "<group>"; };
 		86E817D51FC4177F00141998 /* Erasure Code */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Erasure Code"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E817D81FC4177F00141998 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		86FCD2AB1FC417E1001DEC76 /* prepare.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = prepare.cpp; sourceTree = "<group>"; };
+		86FCD2AE1FC424F1001DEC76 /* functions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = functions.h; sourceTree = "<group>"; };
+		86FCD2AF1FC455D8001DEC76 /* List.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		86FCD2B01FC45722001DEC76 /* ListOperation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ListOperation.cpp; sourceTree = "<group>"; };
+		86FCD2B21FC5620C001DEC76 /* dataBlock.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dataBlock.cpp; sourceTree = "<group>"; };
+		86FCD2B31FC5620C001DEC76 /* dataBlock.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = dataBlock.hpp; sourceTree = "<group>"; };
+		86FCD2B51FC571BA001DEC76 /* matrixOperation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = matrixOperation.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +73,15 @@
 			isa = PBXGroup;
 			children = (
 				86E817D81FC4177F00141998 /* main.cpp */,
+				86FCD2AB1FC417E1001DEC76 /* prepare.cpp */,
+				86FCD2AE1FC424F1001DEC76 /* functions.h */,
+				86FCD2AF1FC455D8001DEC76 /* List.h */,
+				86FCD2B01FC45722001DEC76 /* ListOperation.cpp */,
+				86FCD2B21FC5620C001DEC76 /* dataBlock.cpp */,
+				86FCD2B31FC5620C001DEC76 /* dataBlock.hpp */,
+				86FCD2B51FC571BA001DEC76 /* matrixOperation.cpp */,
+				86B273AB1FC664BF00E39B6B /* decoded.cpp */,
+				86B273AD1FC6696C00E39B6B /* simulator.cpp */,
 			);
 			path = "Erasure Code";
 			sourceTree = "<group>";
@@ -120,6 +144,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				86E817D91FC4177F00141998 /* main.cpp in Sources */,
+				86B273AE1FC6696C00E39B6B /* simulator.cpp in Sources */,
+				86FCD2AD1FC417E1001DEC76 /* prepare.cpp in Sources */,
+				86B273AC1FC664BF00E39B6B /* decoded.cpp in Sources */,
+				86FCD2B61FC571BA001DEC76 /* matrixOperation.cpp in Sources */,
+				86FCD2B11FC45722001DEC76 /* ListOperation.cpp in Sources */,
+				86FCD2B41FC5620C001DEC76 /* dataBlock.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
