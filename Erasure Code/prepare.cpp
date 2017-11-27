@@ -17,11 +17,10 @@ using namespace std;
 List dataList;
 DataBlock dataBlocks[4];
 DataBlock ecBlocks[2];
-int ** metadataMatrix;
-int ** encodeMatrix;
-int ** encodedDataMatrix;
-//int metadataMatrix[BLOCK_NUM][DATA_NUM/BLOCK_NUM];
-int encodeMatrixData[BLOCK_NUM+ECBLOCK_NUM][BLOCK_NUM] = {
+float ** metadataMatrix;
+float ** encodeMatrix;
+float ** encodedDataMatrix;
+float encodeMatrixData[BLOCK_NUM+ECBLOCK_NUM][BLOCK_NUM] = {
     {1,0,0,0},
     {0,1,0,0},
     {0,0,1,0},
@@ -43,13 +42,13 @@ void dataInitial(){
     else{
         cout<<"元数据已创建"<<endl;
     }
-    metadataMatrix = new int * [BLOCK_NUM];
+    metadataMatrix = new float * [BLOCK_NUM];
     for (int i = 0; i<BLOCK_NUM; i++) {
-        metadataMatrix[i]=new int[DATA_NUM/BLOCK_NUM];
+        metadataMatrix[i]=new float[DATA_NUM/BLOCK_NUM];
     }
-    encodeMatrix = new  int * [BLOCK_NUM+ECBLOCK_NUM];
+    encodeMatrix = new  float * [BLOCK_NUM+ECBLOCK_NUM];
     for (int i = 0; i<BLOCK_NUM+ECBLOCK_NUM; i++) {
-        encodeMatrix[i]= new int [BLOCK_NUM];
+        encodeMatrix[i]= new float [BLOCK_NUM];
         for (int j=0; j<BLOCK_NUM; j++) {
             encodeMatrix[i][j]=encodeMatrixData[i][j];
         }
@@ -60,8 +59,8 @@ void dataPrepare(List &L, char * buffer){
     const char * split = " ";
     char * value = strtok(buffer, split);
     while (value!=NULL) {
-        int metadata;
-        sscanf(value, "%d",&metadata);
+        float metadata;
+        sscanf(value, "%f",&metadata);
         addElem(L, metadata);
         value = strtok(NULL, split);
     }
@@ -95,9 +94,9 @@ void dataPartition(){
     cout<<"元数据矩阵："<<endl;
     printMatrix(metadataMatrix, BLOCK_NUM, DATA_NUM/BLOCK_NUM);
     
-    encodedDataMatrix = new int *[BLOCK_NUM+ECBLOCK_NUM];
+    encodedDataMatrix = new float *[BLOCK_NUM+ECBLOCK_NUM];
     for (int i =0; i<BLOCK_NUM+ECBLOCK_NUM; i++) {
-        encodedDataMatrix[i]=new int [DATA_NUM/BLOCK_NUM];
+        encodedDataMatrix[i]=new float [DATA_NUM/BLOCK_NUM];
     }
     
     encodedDataMatrix = multiplyMatrix(encodeMatrix, metadataMatrix, (BLOCK_NUM+ECBLOCK_NUM), BLOCK_NUM, (DATA_NUM/BLOCK_NUM));
@@ -132,24 +131,7 @@ void dataDeploy(){
         }
         outfile.close();
     }
-//    delete(metadataMatrix);
-//    delete [] metadataMatrix;
-//    delete [] encodedDataMatrix;
     deleteMatrix(metadataMatrix, BLOCK_NUM);
     deleteMatrix(encodedDataMatrix, BLOCK_NUM+ECBLOCK_NUM);
-//    printMatrix(metadataMatrix, 4, 6);
-}
-
-void testReadData(){
-    ifstream infile("5");
-    if (!infile) {
-        cout<<"文件不存在"<<endl;
-    }
-    while (!infile.eof()) {
-        char buffer[256];
-        infile.getline(buffer, 256);
-        cout<<"第一个数据块数据："<<endl;
-        cout<<buffer<<endl;
-    }
 }
 

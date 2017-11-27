@@ -13,7 +13,7 @@
 #define INCREMENT_SIZE 10
 
 struct List {
-    int * elem;
+    float * elem;
     int listsize = 0;
     int length = 0;
 };
@@ -21,9 +21,9 @@ struct List {
 //List dataList;
 
 void initList(List &L);
-void addElem(List &L, int elem);
-void deleteElem(List &L, int position);
+void addElem(List &L, float elem);
+void deleteElem(List &L, float position);
 void readList(List &L);
-int getElem(List &L, int position);
+float getElem(List &L, int position);
 
 #endif /* List_h */

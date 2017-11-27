@@ -14,13 +14,13 @@
 using namespace std;
 
 void initList(List &L){
-    L.elem = (int *)malloc(sizeof(int)*MAX_SIZE);
+    L.elem = (float *)malloc(sizeof(float)*MAX_SIZE);
     L.listsize=MAX_SIZE;
     L.length=0;
 }
-void addElem(List &L, int elem){
+void addElem(List &L,float elem){
     if (L.length>=L.listsize) {
-        L.elem = (int *)realloc(L.elem, sizeof(int)*(INCREMENT_SIZE+L.listsize));
+        L.elem = (float *)realloc(L.elem, sizeof(float)*(INCREMENT_SIZE+L.listsize));
     }
     L.elem[L.length]=elem;
     L.length++;
@@ -36,7 +36,7 @@ void readList(List &L){
         cout<<getElem(L, i)<<endl;
     }
 }
-int getElem(List &L, int position){
+float getElem(List &L, int position){
     return L.elem[position];
 }
 

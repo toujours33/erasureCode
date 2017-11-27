@@ -8,11 +8,15 @@
 #include <iostream>
 #include "functions.h"
 
+
 int main(){
+    
     dataInitial();
     dataPartition();
     dataDeploy();
-    testReadData();
+    
+    simulator();
+
     
     return 0;
 }
